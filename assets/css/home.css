@@ -17,10 +17,8 @@ button {
 header {
   min-height: 53.2rem;
   background-color: #f8f8ff;
-
   position: relative;
   overflow: hidden;
-
   display: grid;
   place-content: center;
 }
@@ -33,7 +31,6 @@ header::after {
   background-size: cover;
   width: 50.4rem;
   height: 36rem;
-
   position: absolute;
   right: -10.2rem;
   bottom: -1.2rem;
@@ -50,10 +47,8 @@ header .content .top {
 .top > span {
   font-weight: 500;
   line-height: 160%;
-
   letter-spacing: 0.1em;
   text-transform: uppercase;
-
   color: #5a58e4;
 }
 
@@ -71,11 +66,9 @@ h1 strong {
 
 form {
   margin-top: 4rem;
-
   display: flex;
   padding: 4rem;
   gap: 2.4rem;
-
   background: #ffffff;
   border: 0.1rem solid #eaeaea;
   border-radius: 1rem;
@@ -85,7 +78,6 @@ form {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-
   background: #f4f4ff;
   border-radius: 0.5rem;
   padding: 1.2rem 0.8rem 1.2rem 1.4rem;
@@ -118,7 +110,6 @@ main > .content {
 
 .cards {
   margin-top: 4rem;
-
   display: grid;
   gap: 3.2rem;
   grid-template-columns: 1fr 1fr 1fr;
@@ -164,6 +155,6 @@ h2 {
   overflow: hidden;
   display: grid;
   gap: 1.6rem;
-
   padding: 1.6rem;
+  cursor: pointer;
 }
