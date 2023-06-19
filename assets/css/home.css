@@ -101,6 +101,7 @@ input {
   color: white;
   text-align: center;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
 main > .content {
