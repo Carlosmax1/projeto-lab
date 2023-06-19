@@ -1,0 +1,84 @@
+html,
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+input,
+button {
+  all: unset;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+header {
+  min-height: 53.2rem;
+  background-color: #f8f8ff;
+
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  place-content: center;
+}
+
+header .content {
+  width: fit-content;
+}
+
+header .content .top {
+  text-align: center;
+}
+
+.top > span {
+  font-weight: 500;
+  line-height: 160%;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #5a58e4;
+}
+
+header h1 {
+  font-size: 4.8rem;
+  line-height: 125%;
+  color: #121214;
+  max-width: 64.7rem;
+  margin: 1.8rem auto 0;
+}
+
+h1 strong {
+  color: #5a58e4;
+}
+
+form {
+  margin-top: 4rem;
+
+  display: flex;
+  padding: 4rem;
+  gap: 2.4rem;
+
+  background: #ffffff;
+  border: 0.1rem solid #eaeaea;
+  border-radius: 1rem;
+}
+
+input {
+  color: #7c7c8a;
+  min-width: 29rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  background: #f4f4ff;
+  border-radius: 0.5rem;
+  padding: 1.2rem 0.8rem 1.2rem 1.4rem;
+}
