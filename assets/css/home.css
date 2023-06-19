@@ -5,17 +5,13 @@ button {
   font-family: "Poppins", sans-serif;
 }
 
-input,
-button {
-  all: unset;
-}
-
 :root {
   font-size: 62.5%;
 }
 
-body {
-  min-height: 100vh;
+input,
+button {
+  all: unset;
 }
 
 header {
@@ -27,6 +23,20 @@ header {
 
   display: grid;
   place-content: center;
+}
+
+header::after {
+  content: "";
+  background-image: url(../images/party.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 50.4rem;
+  height: 36rem;
+
+  position: absolute;
+  right: -10.2rem;
+  bottom: -1.2rem;
 }
 
 header .content {
@@ -71,9 +81,7 @@ form {
   border-radius: 1rem;
 }
 
-input {
-  color: #7c7c8a;
-  min-width: 29rem;
+.search-container {
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -81,4 +89,81 @@ input {
   background: #f4f4ff;
   border-radius: 0.5rem;
   padding: 1.2rem 0.8rem 1.2rem 1.4rem;
+}
+
+.search-container i {
+  color: #5a58e4;
+  font-size: 2.4rem;
+}
+
+input {
+  color: #7c7c8a;
+  min-width: 29rem;
+}
+
+.btn-search {
+  padding: 1.2rem 3.2rem;
+  width: 100%;
+  background-color: #5a58e4;
+  border-radius: 0.6rem;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+main > .content {
+  max-width: 121.6rem;
+  margin: 10rem auto;
+}
+
+.cards {
+  margin-top: 4rem;
+
+  display: grid;
+  gap: 3.2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.infos {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.infos > p {
+  color: #121214;
+  font-size: 2rem;
+  line-height: 140%;
+}
+
+.infos span {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1.2rem;
+  opacity: 0.75;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.infos span i {
+  color: #5a58e4;
+}
+
+.card {
+  background: #fff;
+  border: 0.1rem solid #eaeaea;
+  border-radius: 1rem;
+  max-width: 38.4rem;
+  overflow: hidden;
+  display: grid;
+  gap: 1.6rem;
+
+  padding: 1.6rem;
 }
