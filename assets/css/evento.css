@@ -1,0 +1,95 @@
+html,
+body,
+input,
+button,
+select {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+input,
+button,
+select {
+  all: unset;
+}
+
+header {
+  height: 9rem;
+  background-color: #5a58e4;
+}
+
+.content {
+  max-width: 121.6rem;
+  margin: 5rem auto;
+
+  border-radius: 0.5rem;
+  padding: 1.2rem 0.8rem 1.2rem 1.4rem;
+  border: 0.1rem solid #eaeaea;
+  height: fit-content;
+}
+
+iframe {
+  width: inherit;
+  height: inherit;
+  border-radius: 0.5rem;
+}
+
+.map {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-contatiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-insc {
+  padding: 1.2rem 3.2rem;
+  width: 10%;
+  background-color: #5a58e4;
+  border-radius: 0.6rem;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.container {
+  margin-top: 2rem;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 50%;
+}
+
+strong {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+strong i {
+  font-size: 2rem;
+}
+
+span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.4rem;
+}

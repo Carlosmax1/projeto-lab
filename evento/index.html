@@ -1,10 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/evento.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>Evento A</title>
   </head>
-  <body></body>
+  <body>
+    <div id="app">
+      <header></header>
+      <main>
+        <div class="content">
+          <h1>Detalhes do evento</h1>
+          <div class="container">
+            <div class="infos">
+              <span
+                ><strong> <i class="ph ph-info"></i>Nome: </strong>Evento
+                A</span
+              >
+              <span
+                ><strong> <i class="ph ph-clock"></i>Horário: </strong
+                >22:30hrs</span
+              >
+              <span
+                ><strong> <i class="ph ph-map-pin"></i>Local: </strong
+                >UFV-CRP</span
+              >
+              <span
+                ><strong> <i class="ph ph-quotes"></i>Descrição: </strong>Lorem
+                ipsum dolor sit amet consectetur adipisicing elit.</span
+              >
+              <span
+                ><strong> <i class="ph ph-users"></i>Vagas: </strong>24</span
+              >
+            </div>
+            <div class="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.4394991744043!2d-46.2241271092163!3d-19.21966841556593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b1f9b96201cf07%3A0x800b08785c567594!2sUniversidade%20Federal%20de%20Vi%C3%A7osa%20-%20Campus%20Rio%20Parana%C3%ADba!5e0!3m2!1spt-BR!2sbr!4v1687282314899!5m2!1spt-BR!2sbr"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+          <div class="btn-container">
+            <button class="btn-insc">Inscrever-se</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      /* Pega o parametro da URL */
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const id = urlParams.get("id");
+    </script>
+  </body>
 </html>
