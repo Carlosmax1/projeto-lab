@@ -59,6 +59,7 @@ iframe {
   text-align: center;
   font-size: 1.3rem;
   cursor: pointer;
+  margin-top: 4rem;
 }
 
 .container {
@@ -72,7 +73,7 @@ iframe {
 .infos {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   width: 50%;
 }
 

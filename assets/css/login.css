@@ -1,0 +1,86 @@
+html,
+body,
+input,
+button,
+select {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+input,
+button,
+select {
+  all: unset;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  background-color: #f8f8ff;
+  overflow: hidden;
+}
+
+body::after {
+  content: "";
+  background: url(../images/party.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 50.4rem;
+  height: 36rem;
+  position: absolute;
+  left: -10rem;
+  top: 2rem;
+}
+
+#app {
+  background: #fff;
+  width: 42rem;
+  height: 30rem;
+
+  border-radius: 0.5rem;
+  padding: 4rem;
+}
+
+input {
+  border: 0.1rem solid #aeaeae;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 1.4rem;
+}
+
+label {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+form {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.btn-login {
+  padding: 1.2rem 3.2rem;
+  width: 10%;
+  background-color: #5a58e4;
+  border-radius: 0.6rem;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+input:focus {
+  outline: 0.1rem solid #5a58e4;
+}
+
+.btn-login:hover {
+  background-color: #4a48be;
+}
