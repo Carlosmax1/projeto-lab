@@ -18,7 +18,7 @@
     <div id="app">
       <header></header>
       <main>
-        <div class="content">
+        <section class="details">
           <h1>Detalhes do evento</h1>
           <div class="container">
             <div class="infos">
@@ -31,7 +31,26 @@
                 consectetur adipisicing elit.</span
               >
               <span><strong>Preço: </strong>R$20,00</span>
+              <div class="btn-container">
+                <button class="btn-insc">Inscrever-se</button>
+              </div>
             </div>
+            <div id="slider">
+              <img
+                class="selected"
+                src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                alt=""
+              />
+              <img
+                src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                alt=""
+              />
+              <img
+                src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80"
+                alt=""
+              />
+            </div>
+            <!--
             <div class="map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.4394991744043!2d-46.2241271092163!3d-19.21966841556593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b1f9b96201cf07%3A0x800b08785c567594!2sUniversidade%20Federal%20de%20Vi%C3%A7osa%20-%20Campus%20Rio%20Parana%C3%ADba!5e0!3m2!1spt-BR!2sbr!4v1687282314899!5m2!1spt-BR!2sbr"
@@ -41,11 +60,40 @@
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
+            -->
           </div>
-          <div class="btn-container">
-            <button class="btn-insc">Inscrever-se</button>
+        </section>
+        <section class="comments">
+          <h1>Comentários</h1>
+          <div class="container">
+            <div class="user-info">
+              <img
+                class="avatar"
+                src="../assets/images/avatar.png"
+                alt="Avatar"
+              />
+              <span class="user-name">Carlos Eduardo</span>
+            </div>
+            <div class="user-comment">
+              <span class="user-comment-text"
+                >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Doloribus at sunt, hic ad autem ducimus iure.
+              </span>
+              <div class="stars">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5"></label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4"></label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3"></label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2"></label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1"></label>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </main>
     </div>
     <script>
@@ -54,5 +102,6 @@
       const urlParams = new URLSearchParams(queryString);
       const id = urlParams.get("id");
     </script>
+    <script src="../assets/js/slider.js"></script>
   </body>
 </html>
