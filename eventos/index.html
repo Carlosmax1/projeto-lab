@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/eventos.css" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Lista de eventos</title>
+  </head>
+  <body>
+    <div id="app">
+      <header></header>
+      <main>
+        <h1 class="title">Pesquisar por eventos</h1>
+        <form>
+          <div class="search-container">
+            <i class="ph ph-magnifying-glass"></i>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Pesquise por nome"
+            />
+          </div>
+          <div class="search-container select">
+            <i class="ph ph-list"></i>
+            <label class="sr-only" for="city">Selecione uma categoria</label>
+            <select name="categoria" id="categoria">
+              <option value="0" selected>Selecione uma categoria</option>
+              <option value="">Categoria A</option>
+              <option value="">Categoria B</option>
+              <option value="">Categoria C</option>
+            </select>
+            <i class="ph ph-caret-down"></i>
+          </div>
+          <button class="btn-search">Pesquisar</button>
+        </form>
+        <section class="event-list">
+          <h2>Lista de eventos</h2>
+          <div class="list">
+            <div class="card">
+              <img src="../assets/images/card.svg" alt="" />
+              <div class="infos">
+                <p>Nome do evento</p>
+                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../assets/images/card.svg" alt="" />
+              <div class="infos">
+                <p>Nome do evento</p>
+                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../assets/images/card.svg" alt="" />
+              <div class="infos">
+                <p>Nome do evento</p>
+                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../assets/images/card.svg" alt="" />
+              <div class="infos">
+                <p>Nome do evento</p>
+                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -91,6 +91,7 @@ form {
 input {
   color: #111;
   min-width: 29rem;
+  font-size: 1.5rem;
 }
 
 .btn-search {
