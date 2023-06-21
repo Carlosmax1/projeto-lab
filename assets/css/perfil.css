@@ -1,0 +1,83 @@
+html,
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+input,
+button,
+select {
+  all: unset;
+}
+
+header {
+  height: 9rem;
+  background-color: #5a58e4;
+}
+
+main,
+.history {
+  max-width: 121.6rem;
+  margin: 5rem auto;
+
+  border-radius: 0.5rem;
+  padding: 1.2rem 0.8rem 1.2rem 1.4rem;
+  border: 0.1rem solid #eaeaea;
+  height: fit-content;
+}
+
+h1 span {
+  color: #5a58e4;
+}
+
+.user-infos {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.avatar {
+  width: 4rem;
+  height: 4rem;
+  box-shadow: 1px 2px 3px #111;
+  border-radius: 100%;
+}
+
+.user-name {
+  font-size: 1.4rem;
+}
+
+ul {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+li {
+  font-size: 1.3rem;
+}
+
+li i {
+  font-size: 2rem;
+}
+
+.title-history {
+  font-size: 2rem;
+}
+
+.history .content {
+  margin-top: 2rem;
+}
