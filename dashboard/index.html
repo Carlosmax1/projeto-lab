@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="active">
+              <i class="ph ph-house"></i>
+              Dashboard
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <div class="inner">
+          <h1>Dashboard</h1>
+          <div class="search">
+            <button class="btn-filter">Filtar</button>
+            <div class="input-container">
+              <i class="ph ph-magnifying-glass"></i>
+              <input placeholder="Pesquise por um evento..." type="text" />
+            </div>
+          </div>
+          <section class="cards">
+            <div class="card">
+              <img src="../assets/images/card.svg" alt="Card" />
+              <div class="infos">
+                <p>Nome do evento</p>
+                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../assets/images/card.svg" alt="Card" />
+              <div class="infos">
+                <p>Nome do evento</p>
+                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../assets/images/card.svg" alt="Card" />
+              <div class="infos">
+                <p>Nome do evento</p>
+                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../assets/images/card.svg" alt="Card" />
+              <div class="infos">
+                <p>Nome do evento</p>
+                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../assets/images/card.svg" alt="Card" />
+              <div class="infos">
+                <p>Nome do evento</p>
+                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../assets/images/card.svg" alt="Card" />
+              <div class="infos">
+                <p>Nome do evento</p>
+                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script>
+      const div = document.querySelector(".input-container");
+      const input = document.querySelector(".input-container input");
+      input.addEventListener("focusin", () => {
+        div.classList.add("focus");
+      });
+      input.addEventListener("focusout", () => {
+        div.classList.remove("focus");
+      });
+    </script>
+  </body>
+</html>

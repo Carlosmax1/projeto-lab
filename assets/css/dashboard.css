@@ -1,0 +1,169 @@
+html,
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+input,
+button,
+select {
+  all: unset;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #5a58e4;
+}
+
+a {
+  text-decoration: none;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+
+  min-height: 100vh;
+}
+
+main .inner {
+  height: 100%;
+  background-color: #fbfaff;
+  border-top-left-radius: 3.2rem;
+  overflow-y: scroll;
+  padding: 4.8rem 3.2rem;
+}
+
+main {
+  padding-top: 0.8rem;
+  overflow-y: scroll;
+}
+
+nav {
+  padding: 3.2rem 2.7rem 0 3.5rem;
+}
+
+ul {
+  margin-top: 6rem;
+
+  list-style: none;
+
+  display: grid;
+  gap: 3.6rem;
+
+  min-width: 11.5rem;
+}
+
+li a {
+  color: #cab3ff;
+
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  font-weight: 500;
+}
+
+a.active,
+a:hover {
+  color: white;
+  font-weight: 700;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 1rem;
+  border: 0.1rem solid #aeaeae;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.focus {
+  outline: 1px solid #5a58e4;
+}
+
+.input-container i {
+  font-size: 2rem;
+}
+
+input::placeholder {
+  font-style: italic;
+  font-weight: 200;
+  color: #b6b6b6;
+}
+
+input {
+  flex: 1;
+}
+
+.btn-filter {
+  padding: 1.2rem 3.2rem;
+
+  background: #5a58e4;
+  border-radius: 0.5rem;
+  color: white;
+}
+.cards {
+  margin-top: 4rem;
+  display: grid;
+  gap: 3.2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.infos {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.infos > p {
+  color: #121214;
+  font-size: 2rem;
+  line-height: 140%;
+}
+
+.infos span {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1.2rem;
+  opacity: 0.75;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.infos span i {
+  color: #5a58e4;
+}
+
+.card {
+  background: #fff;
+  border: 0.1rem solid #eaeaea;
+  border-radius: 1rem;
+  max-width: 38.4rem;
+  overflow: hidden;
+  display: grid;
+  gap: 1.6rem;
+  padding: 1.6rem;
+  cursor: pointer;
+}
