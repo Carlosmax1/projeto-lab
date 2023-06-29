@@ -6,4 +6,5 @@ $dbname = "sistema_eventos";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+
 ?>

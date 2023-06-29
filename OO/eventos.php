@@ -13,7 +13,7 @@ class Evento {
   private $images;
 
   private $conn;
-  private $table_name = "events";
+  private $table_name = "eventos";
 
   public function __construct($db){
     $this->conn = $db;
@@ -100,6 +100,71 @@ class Evento {
       echo "Error: " . $query . "<br>" . $this->conn->error;
       return false;
     }
+  }
+
+  public function event_recents(){
+    $query = "SELECT * FROM {$this->table_name}
+              ORDER BY ID DESC
+              LIMIT 3
+    ";
+
+    $result = $this->conn->query($query);
+
+    if ($result === false) {
+      echo "Error: " . $query . "<br>" . $this->conn->error;
+      return false;
+    }
+
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      $rows[] = $row;
+    }
+
+    echo json_encode($rows);
+    
+  }
+
+  public function getCommentsByEventId($id){
+    $query = "SELECT u.name, r.comment, r.score
+      FROM reviews r JOIN users u ON r.user_id = u.id
+      WHERE evento_id = $id
+    ";
+
+    $result = $this->conn->query($query);
+
+    if ($result === false) {
+      echo "Error: " . $query . "<br>" . $this->conn->error;
+      return false;
+    }
+
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      $rows[] = $row;
+    }
+
+    echo json_encode($rows);
+  }
+
+  public function getById($id){
+    $query = "SELECT * FROM eventos
+      WHERE ID = $id
+    ";
+
+    $result = $this->conn->query($query);
+
+    if ($result === false) {
+      echo "Error: " . $query . "<br>" . $this->conn->error;
+      return false;
+    }
+
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      $rows[] = $row;
+    }
+
+    echo json_encode($rows);
+
+    
   }
 
   public function __destruct(){

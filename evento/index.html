@@ -16,21 +16,25 @@
   </head>
   <body>
     <div id="app">
-      <header></header>
+      <header>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Eventos</a>
+          </li>
+          <li>
+            <a href="#">Perfil</a>
+          </li>
+        </ul>
+      </header>
       <main>
         <section class="details">
           <h1 class="title-details">Detalhes do evento</h1>
           <div class="container">
             <div class="infos">
-              <span><strong>Nome: </strong>Evento A</span>
-              <span><strong>Horário: </strong>22:30hrs</span>
-              <span><strong>Local: </strong>UFV-CRP</span>
-              <span><strong>Data: </strong>09/03/2023 </span>
-              <span
-                ><strong>Descrição: </strong>Lorem ipsum dolor sit amet
-                consectetur adipisicing elit.</span
-              >
-              <span><strong>Preço: </strong>R$20,00</span>
+              <div class="texts"></div>
               <div class="map">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.4394991744043!2d-46.2241271092163!3d-19.21966841556593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b1f9b96201cf07%3A0x800b08785c567594!2sUniversidade%20Federal%20de%20Vi%C3%A7osa%20-%20Campus%20Rio%20Parana%C3%ADba!5e0!3m2!1spt-BR!2sbr!4v1687282314899!5m2!1spt-BR!2sbr"
@@ -63,55 +67,57 @@
         </section>
         <section class="comments">
           <h1 class="title-comments">Comentários</h1>
-          <div class="container">
-            <div class="user-info">
-              <img
-                class="avatar"
-                src="../assets/images/avatar.png"
-                alt="Avatar"
-              />
-              <span class="user-name">Carlos Eduardo</span>
+          <div class="comments-list">
+            <div class="container">
+              <div class="user-info">
+                <img
+                  class="avatar"
+                  src="../assets/images/avatar.png"
+                  alt="Avatar"
+                />
+                <span class="user-name">Carlos Eduardo</span>
+              </div>
+              <div class="user-comment">
+                <span class="user-comment-text"
+                  >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Doloribus at sunt, hic ad autem ducimus iure.
+                </span>
+                <div id="stars" class="stars"></div>
+              </div>
             </div>
-            <div class="user-comment">
-              <span class="user-comment-text"
-                >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Doloribus at sunt, hic ad autem ducimus iure.
-              </span>
-              <div id="stars" class="stars"></div>
+            <div class="container">
+              <div class="user-info">
+                <img
+                  class="avatar"
+                  src="../assets/images/avatar.png"
+                  alt="Avatar"
+                />
+                <span class="user-name">Carlos Eduardo</span>
+              </div>
+              <div class="user-comment">
+                <span class="user-comment-text"
+                  >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Doloribus at sunt, hic ad autem ducimus iure.
+                </span>
+                <div id="stars" class="stars"></div>
+              </div>
             </div>
-          </div>
-          <div class="container">
-            <div class="user-info">
-              <img
-                class="avatar"
-                src="../assets/images/avatar.png"
-                alt="Avatar"
-              />
-              <span class="user-name">Carlos Eduardo</span>
-            </div>
-            <div class="user-comment">
-              <span class="user-comment-text"
-                >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Doloribus at sunt, hic ad autem ducimus iure.
-              </span>
-              <div id="stars" class="stars"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="user-info">
-              <img
-                class="avatar"
-                src="../assets/images/avatar.png"
-                alt="Avatar"
-              />
-              <span class="user-name">Carlos Eduardo</span>
-            </div>
-            <div class="user-comment">
-              <span class="user-comment-text"
-                >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Doloribus at sunt, hic ad autem ducimus iure.
-              </span>
-              <div id="stars" class="stars"></div>
+            <div class="container">
+              <div class="user-info">
+                <img
+                  class="avatar"
+                  src="../assets/images/avatar.png"
+                  alt="Avatar"
+                />
+                <span class="user-name">Carlos Eduardo</span>
+              </div>
+              <div class="user-comment">
+                <span class="user-comment-text"
+                  >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Doloribus at sunt, hic ad autem ducimus iure.
+                </span>
+                <div id="stars" class="stars"></div>
+              </div>
             </div>
           </div>
         </section>
@@ -145,13 +151,9 @@
         </section>
       </main>
     </div>
-    <script>
-      /* Pega o parametro da URL */
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const id = urlParams.get("id");
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../assets/js/slider.js"></script>
     <script src="../assets/js/rating.js"></script>
+    <script src="../assets/js/evento.js"></script>
   </body>
 </html>

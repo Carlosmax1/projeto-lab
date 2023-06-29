@@ -21,6 +21,25 @@ header {
   background-color: #5a58e4;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: center;
+  height: 100%;
+  gap: 1rem;
+}
+
+li a {
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
 main {
   max-width: 121.6rem;
   margin: 5rem auto;
@@ -87,6 +106,7 @@ select {
 select,
 .select {
   position: relative;
+  cursor: pointer;
 }
 
 select {

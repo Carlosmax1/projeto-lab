@@ -55,29 +55,37 @@ h1 span {
   font-size: 1.4rem;
 }
 
-ul {
-  list-style: none;
-  margin-top: 2rem;
-}
-
-li {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-li {
-  font-size: 1.3rem;
-}
-
-li i {
-  font-size: 2rem;
-}
-
 .title-history {
   font-size: 2rem;
 }
 
 .history .content {
   margin-top: 2rem;
+}
+
+.user-mail {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: center;
+  height: 100%;
+  gap: 1rem;
+}
+
+.item-menu a {
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
 }

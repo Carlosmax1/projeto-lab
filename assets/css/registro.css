@@ -16,6 +16,31 @@ select {
   all: unset;
 }
 
+select {
+  color: #111;
+  min-width: 29rem;
+  font-size: 1.5rem;
+}
+
+select {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.select {
+  border: 0.1rem solid #aeaeae;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  height: fit-content;
+}
+
+.select i.ph-caret-down {
+  position: absolute;
+  right: 1rem;
+  z-index: 0;
+}
+
 body {
   height: 100vh;
   display: grid;

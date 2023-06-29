@@ -15,6 +15,7 @@ class Registration {
       return die("Connection failed: " . $this->conn->connect_error);
     }
   }
+  
 
   public function create($POST){
     // Obtenha os dados do formulário POST

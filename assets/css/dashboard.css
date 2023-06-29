@@ -27,7 +27,6 @@ a {
 #app {
   display: grid;
   grid-template-columns: max-content 1fr;
-
   min-height: 100vh;
 }
 
@@ -35,13 +34,11 @@ main .inner {
   height: 100%;
   background-color: #fbfaff;
   border-top-left-radius: 3.2rem;
-  overflow-y: scroll;
   padding: 4.8rem 3.2rem;
 }
 
 main {
   padding-top: 0.8rem;
-  overflow-y: scroll;
 }
 
 nav {
@@ -50,22 +47,17 @@ nav {
 
 ul {
   margin-top: 6rem;
-
   list-style: none;
-
   display: grid;
   gap: 3.6rem;
-
   min-width: 11.5rem;
 }
 
 li a {
   color: #cab3ff;
-
   display: flex;
   align-items: center;
   gap: 1.6rem;
-
   font-weight: 500;
 }
 
@@ -112,7 +104,7 @@ input {
 
 .btn-filter {
   padding: 1.2rem 3.2rem;
-
+  cursor: pointer;
   background: #5a58e4;
   border-radius: 0.5rem;
   color: white;

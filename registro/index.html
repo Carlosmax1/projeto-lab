@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="../assets/css/registro.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>Eventos - Registro</title>
   </head>
   <body>
@@ -27,6 +28,14 @@
         <input required name="senha" id="senha" type="password" />
         <label for="confirmar-senha">Confirmar senha: </label>
         <input type="password" name="confirmar-senha" id="confirmar-senha" />
+        <label for="interesse">Interesse: </label>
+        <div class="select">
+          <select id="interesse" name="interesse">
+            <option value="participante">Participante</option>
+            <option value="organizador">Organizador</option>
+          </select>
+          <i class="ph ph-caret-down"></i>
+        </div>
         <button class="btn-registrar" type="submit">Registrar</button>
       </form>
     </div>

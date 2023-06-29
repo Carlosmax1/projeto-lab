@@ -1,0 +1,67 @@
+html,
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+input,
+button {
+  all: unset;
+}
+
+a {
+  text-decoration: none;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  min-height: 100vh;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #5a58e4;
+}
+
+main .inner {
+  height: 100%;
+  background-color: #fbfaff;
+  border-top-left-radius: 3.2rem;
+  padding: 4.8rem 3.2rem;
+}
+
+main {
+  padding-top: 0.8rem;
+}
+
+nav {
+  padding: 3.2rem 2.7rem 0 3.5rem;
+}
+
+ul {
+  margin-top: 6rem;
+  list-style: none;
+  display: grid;
+  gap: 3.6rem;
+  min-width: 11.5rem;
+}
+
+li a {
+  color: #cab3ff;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-weight: 500;
+}
+
+a.active,
+a:hover {
+  color: white;
+  font-weight: 700;
+}
