@@ -19,13 +19,13 @@
       <nav>
         <ul>
           <li>
-            <a href="/dashboard/">
+            <a href="../index.html">
               <i class="ph ph-calendar"></i>
               Eventos
             </a>
           </li>
           <li>
-            <a href="/dashboard/usuarios/" class="active">
+            <a href="#" class="active">
               <i class="ph ph-users"></i>
               Usuários
             </a>
@@ -34,6 +34,43 @@
       </nav>
       <main>
         <div class="inner">
+          <h1 class="title">Usuários</h1>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Tipo</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
+      </main>
+      <div id="modal" class="modal hidden">
+        <div class="content">
+          <h2 class="modal-title">Tem certeza que deseja deletar?</h2>
+          <div class="btn-yes-no-container">
+            <button id="sim">Sim</button>
+            <button id="nao">Não</button>
+          </div>
+        </div>
+      </div>
+      <div class="toast hidden">
+        <p>Usuário deletado com sucesso.</p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../../assets/js/usuarios.js"></script>
+    <script>
+      const modal = document.querySelector(".modal");
+
+      modal.addEventListener("click", (e) => {
+        if (e.target.id === "modal") {
+          modal.classList.add("hidden");
+        }
+      });
+    </script>
   </body>
 </html>

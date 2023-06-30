@@ -45,15 +45,11 @@ class User {
       return false;
     }
 
+    $rows = array();
     while ($row = $result->fetch_assoc()) {
-      // Exibir os dados do usuário
-      echo "
-      <div class='user-container'>
-        <span class='user-name'>{$row['name']}</span>
-        <span class='user-email'>{$row['email']}</span>
-        <span class='user-type'>{$row['user_type']}</span>
-      </div>";
+      $rows[] = $row;
     }
+    echo json_encode($rows);
   }
 
   public function update($POST){
@@ -77,15 +73,16 @@ class User {
   public function delete($POST){
     $this->id = $POST['id'];
 
-    $query = "DELETE FROM {$this->table_name} WHERE id = {$this->id}";
+    $query = "DELETE FROM {$this->table_name} WHERE ID = {$this->id}";
 
     if (!$this->conn->query($query)) {
       echo "Error: " . $query . "<br>" . $this->conn->error;
       return false;
     }
+
   }
 
-  public function __destruct(){
+  /*public function __destruct(){
     $this->conn->close();
-  }
+  }*/
 }

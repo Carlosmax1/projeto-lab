@@ -28,6 +28,7 @@ a {
   display: grid;
   grid-template-columns: max-content 1fr;
   min-height: 100vh;
+  position: relative;
 }
 
 main .inner {
@@ -119,6 +120,8 @@ input {
 img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
 }
 
 .infos {
@@ -157,5 +160,129 @@ h2 {
   display: grid;
   gap: 1.6rem;
   padding: 1.6rem;
+}
+
+.btn-edit {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-self: flex-end;
+  font-size: 1.5rem;
   cursor: pointer;
+}
+
+.btn-edit i {
+  font-size: 2rem;
+}
+
+.modal-create {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: #1111116b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-create .modal-create-content {
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  width: 70rem;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.modal-create-content form input {
+  border: 0.1rem solid #aeaeae;
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+}
+
+.modal-create-content form input:focus {
+  outline: 1px solid #5a58e4;
+}
+
+.modal-edit {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: #1111116b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-edit .modal-edit-content {
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  width: 70rem;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.modal-edit-content form input {
+  border: 0.1rem solid #aeaeae;
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+}
+
+.modal-edit-content form input:focus {
+  outline: 1px solid #5a58e4;
+}
+
+label {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+#createEvent,
+#editEvent {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+select {
+  border: 1px solid #aeaeae;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.btn-create {
+  padding: 1.2rem 3.2rem;
+  width: 40%;
+  background-color: #5a58e4;
+  border-radius: 0.6rem;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.toast {
+  position: fixed;
+  width: fit-content;
+  height: fit-content;
+  padding: 1.5rem;
+  background-color: #219221;
+  z-index: 1000;
+  bottom: 2rem;
+  left: 2rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 0.3rem;
+  color: white;
+}
+
+.toast.error {
+  background-color: #a31818;
 }

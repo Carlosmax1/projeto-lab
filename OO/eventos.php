@@ -29,9 +29,9 @@ class Evento {
     $this->date = $POST['date'];
     $this->time = $POST['time'];
     $this->location = $POST['location'];
-    $this->category_id = $POST['category_id'];
+    $this->category_id = $POST['category'];
     $this->price = $POST['price'];
-    $this->images = $POST['images'];
+    $this->images = $POST['image'];
 
     // Preparar a consulta SQL
     $query = "INSERT INTO {$this->table_name} (title, description, date, time, location, category_id, price, images) VALUES ('{$this->title}', '{$this->description}', '{$this->date}', '{$this->time}', '{$this->location}', {$this->category_id}, {$this->price}, '{$this->images}')";
@@ -53,20 +53,12 @@ class Evento {
       return false;
     }
 
+    $rows = array();
     while ($row = $result->fetch_assoc()) {
-      // Exibir os dados do evento
-      echo "
-      <div class='evento-container'>
-        <span class='evento-title'>{$row['title']}</span>
-        <span class='evento-description'>{$row['description']}</span>
-        <span class='evento-date'>{$row['date']}</span>
-        <span class='evento-time'>{$row['time']}</span>
-        <span class='evento-location'>{$row['location']}</span>
-        <span class='evento-category'>{$row['category_id']}</span>
-        <span class='evento-price'>{$row['price']}</span>
-        <span class='evento-images'>{$row['images']}</span>
-      </div>";
+      $rows[] = $row;
     }
+
+    echo json_encode($rows);
   }
 
   public function update($POST){
@@ -77,9 +69,9 @@ class Evento {
     $this->date = $POST['date'];
     $this->time = $POST['time'];
     $this->location = $POST['location'];
-    $this->category_id = $POST['category_id'];
+    $this->category_id = $POST['category'];
     $this->price = $POST['price'];
-    $this->images = $POST['images'];
+    $this->images = $POST['image'];
 
     // Preparar a consulta SQL
     $query = "UPDATE {$this->table_name} SET title = '{$this->title}', description = '{$this->description}', date = '{$this->date}', time = '{$this->time}', location = '{$this->location}', category_id = {$this->category_id}, price = {$this->price}, images = '{$this->images}' WHERE id = {$this->id}";

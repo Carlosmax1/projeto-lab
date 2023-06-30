@@ -25,7 +25,7 @@
             </a>
           </li>
           <li>
-            <a href="/dashboard/usuarios/">
+            <a href="./usuarios/">
               <i class="ph ph-users"></i>
               Usuários
             </a>
@@ -42,59 +42,104 @@
               <input placeholder="Pesquise por um evento..." type="text" />
             </div>
           </div>
-          <section class="cards">
-            <div class="card">
-              <img src="../assets/images/card.svg" alt="Card" />
-              <div class="infos">
-                <p>Nome do evento</p>
-                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
-              </div>
-            </div>
-            <div class="card">
-              <img src="../assets/images/card.svg" alt="Card" />
-              <div class="infos">
-                <p>Nome do evento</p>
-                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
-              </div>
-            </div>
-            <div class="card">
-              <img src="../assets/images/card.svg" alt="Card" />
-              <div class="infos">
-                <p>Nome do evento</p>
-                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
-                <button style="justify-self: flex-end">
-                  <i class="ph ph-pencil"></i>
-                </button>
-              </div>
-            </div>
-            <div class="card">
-              <img src="../assets/images/card.svg" alt="Card" />
-              <div class="infos">
-                <p>Nome do evento</p>
-                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
-              </div>
-            </div>
-            <div class="card">
-              <img src="../assets/images/card.svg" alt="Card" />
-              <div class="infos">
-                <p>Nome do evento</p>
-                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
-              </div>
-            </div>
-            <div class="card">
-              <img src="../assets/images/card.svg" alt="Card" />
-              <div class="infos">
-                <p>Nome do evento</p>
-                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
-              </div>
-            </div>
-          </section>
+          <section class="cards"></section>
         </div>
       </main>
+      <div id="modal-create" class="modal-create hidden">
+        <div class="modal-create-content">
+          <h2 class="modal-create-title">Criar evento</h2>
+          <form id="createEvent">
+            <label for="title">Nome: </label>
+            <input required id="title" name="title" type="text" />
+            <label for="description">Descrição: </label>
+            <input required id="description" name="description" type="text" />
+            <label for="date">Data: </label>
+            <input required id="date" name="date" type="date" />
+            <label for="time">Horário: </label>
+            <input required type="time" name="time" id="time" />
+            <label for="location">Local: </label>
+            <input required type="text" name="location" id="location" />
+            <label for="category">Categoria: </label>
+            <select required id="category" name="category">
+              <option value="0">Selecione uma categoria</option>
+              <option value="1">Festas</option>
+              <option value="2">Bares</option>
+              <option value="3">Shows</option>
+              <option value="4">Música Ao Vivo</option>
+              <option value="5">Teatros</option>
+              <option value="6">Cursos</option>
+              <option value="7">Ferias</option>
+            </select>
+            <label for="price">Preço: </label>
+            <input required type="number" name="price" id="price" />
+            <label for="image">Imagem: </label>
+            <input required type="url" name="image" id="image" />
+            <button type="submit" class="btn-create">Criar evento</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="modal-edit" class="modal-edit hidden">
+        <div class="modal-edit-content">
+          <h2 class="modal-edit-title">Editar evento</h2>
+          <form id="editEvent">
+            <label for="id">ID: </label>
+            <input readonly type="number" name="id" id="id" />
+            <label for="title">Nome: </label>
+            <input required id="title" name="title" type="text" />
+            <label for="description">Descrição: </label>
+            <input required id="description" name="description" type="text" />
+            <label for="date">Data: </label>
+            <input required id="date" name="date" type="date" />
+            <label for="time">Horário: </label>
+            <input required type="time" name="time" id="time" />
+            <label for="location">Local: </label>
+            <input required type="text" name="location" id="location" />
+            <label for="category">Categoria: </label>
+            <select required id="category" name="category">
+              <option value="0">Selecione uma categoria</option>
+              <option value="1">Festas</option>
+              <option value="2">Bares</option>
+              <option value="3">Shows</option>
+              <option value="4">Música Ao Vivo</option>
+              <option value="5">Teatros</option>
+              <option value="6">Cursos</option>
+              <option value="7">Ferias</option>
+            </select>
+            <label for="price">Preço: </label>
+            <input required type="number" name="price" id="price" />
+            <label for="image">Imagem: </label>
+            <input required type="url" name="image" id="image" />
+            <button type="submit" class="btn-create">Editar evento</button>
+          </form>
+        </div>
+      </div>
+      <div class="toast hidden">
+        <p>Evento criado com sucesso</p>
+      </div>
     </div>
-    <script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script defer>
       const div = document.querySelector(".input-container");
       const input = document.querySelector(".input-container input");
+      const buttonCreate = document.querySelector(".btn-filter");
+      const modal = document.getElementById("modal-create");
+      const modalEdit = document.getElementById("modal-edit");
+
+      buttonCreate.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+      });
+      modal.addEventListener("click", (e) => {
+        if (e.target.id === "modal-create") {
+          modal.classList.add("hidden");
+        }
+      });
+      modalEdit.addEventListener("click", (e) => {
+        if (e.target.id === "modal-edit") {
+          modalEdit.classList.add("hidden");
+        }
+      });
       input.addEventListener("focusin", () => {
         div.classList.add("focus");
       });
