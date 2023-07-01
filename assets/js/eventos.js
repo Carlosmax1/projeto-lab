@@ -94,3 +94,15 @@ function showCategory(id) {
 }
 
 fetch();
+
+window.addEventListener("load", async () => {
+  const userData = await JSON.parse(localStorage.getItem("USER"));
+  if (!userData) {
+    const user = document.querySelector(".user");
+    const login = document.querySelector(".login");
+    login.classList.remove("hidden");
+    user.style.display = "none";
+  }
+  const p = document.querySelector(".user p");
+  p.innerText = userData.name;
+});

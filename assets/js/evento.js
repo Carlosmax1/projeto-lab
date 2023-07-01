@@ -4,12 +4,18 @@ const id = urlParams.get("id");
 
 /* Verifica se o usuário está logado */
 
-window.addEventListener("load", () => {
-  const userData = JSON.parse(localStorage.getItem("USER"));
+window.addEventListener("load", async () => {
+  const userData = await JSON.parse(localStorage.getItem("USER"));
   if (!userData) {
     const button = document.querySelector(".btn-insc");
+    const user = document.querySelector(".user");
+    const login = document.querySelector(".login");
+    login.classList.remove("hidden");
+    user.style.display = "none";
     button.disabled = true;
   }
+  const p = document.querySelector(".user p");
+  p.innerText = userData.name;
 });
 
 const buttonInsc = document.querySelector(".btn-insc");
@@ -226,7 +232,7 @@ const formR = document.querySelector(".form-comment");
 formR.addEventListener("submit", async (e) => {
   e.preventDefault();
   const formData = {};
-
+  const { id: userID } = await JSON.parse(localStorage.getItem("USER"));
   for (let i = 0; i < formR.elements.length; i++) {
     const element = formR.elements[i];
     if (element.name && element.value) {
@@ -234,8 +240,14 @@ formR.addEventListener("submit", async (e) => {
     }
   }
   formData["acao"] = "create_review";
-
-  await createReview().then((response) => console.log(response));
+  formData["userID"] = userID;
+  formData["eventID"] = id;
+  console.log(formData);
+  await createReview(formData)
+    .then((response) => {
+      fetch();
+    })
+    .catch((err) => console.log(err));
 });
 
 function createReview(formData) {

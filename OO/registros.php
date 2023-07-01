@@ -109,6 +109,31 @@ class Registration
     echo json_encode($rows);
   }
 
+  public function getAllEventByUserId($id)
+  {
+    $user_id = $id;
+
+    $query = "SELECT eventos.*
+    FROM eventos
+    INNER JOIN registrations ON registrations.evento_id = eventos.id
+    INNER JOIN users ON users.id = registrations.user_id
+    WHERE user_id = {$user_id}
+    ";
+
+    $result = $this->conn->query($query);
+
+    if ($result === false) {
+      echo "Error: " . $query . "<br>" . $this->conn->error;
+      return false;
+    }
+
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      $rows[] = $row;
+    }
+    echo json_encode($rows);
+  }
+
   /*public function __destruct(){
     $this->conn->close();
   }*/

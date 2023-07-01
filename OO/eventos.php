@@ -168,7 +168,29 @@ class Evento
   public function createReviewEvent($POST)
   {
     $user_id = $POST['userID'];
+    $event_id = $POST['eventID'];
+    $rating = $POST['rating'];
+    $review = $POST['review'];
+
+    $query = " INSERT INTO reviews (user_id, evento_id, score, comment)
+      VALUES ('{$user_id}', '{$event_id}', '{$rating}', '{$review}')
+    ";
+
+    $result = $this->conn->query($query);
+
+    if ($result === false) {
+      echo "Error: " . $query . "<br>" . $this->conn->error;
+      return false;
+    }
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      $rows[] = $row;
+    }
+
+    echo json_encode($rows);
   }
+
+
 
   public function __destruct()
   {

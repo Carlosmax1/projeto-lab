@@ -244,9 +244,13 @@ filter.addEventListener("input", () => {
 
 fetch();
 
-window.addEventListener("load", () => {
-  const isLogin = localStorage.getItem("logado");
-  if (isLogin === "false") {
+window.addEventListener("load", async () => {
+  const userData = await JSON.parse(localStorage.getItem("USER"));
+  if (!userData) {
     return (window.location.href = "../login/index.html");
+  }
+  if (userData.user_type === "organizador") {
+    const userLink = document.querySelector(".users");
+    userLink.style.display = "none";
   }
 });

@@ -42,7 +42,6 @@ async function fetch() {
   await getAll()
     .then(async (response) => {
       const data = await JSON.parse(response);
-      console.log(data);
       html = data.map(
         (item) => `
       <tr>
@@ -99,3 +98,13 @@ function deleteUser(id) {
 }
 
 fetch();
+
+window.addEventListener("load", async () => {
+  const userData = await JSON.parse(localStorage.getItem("USER"));
+  if (!userData) {
+    return (window.location.href = "../login");
+  }
+  if (userData.user_type === "organizador") {
+    return (window.location.href = "../../dashboard");
+  }
+});

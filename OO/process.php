@@ -29,6 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       case 'userSubscribeEvent':
         $registro->create($_POST);
         break;
+      case 'create_review':
+        $evento->createReviewEvent($_POST);
+        break;
       default:
         break;
     }
@@ -65,6 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $evento_id = $_GET['eventID'];
         $user_id = $_GET['userID'];
         $registro->verifyUserSubscribe($evento_id, $user_id);
+        break;
+      case 'read_events_user':
+        $id = $_GET['userID'];
+        $registro->getAllEventByUserId($id);
         break;
       default:
         break;

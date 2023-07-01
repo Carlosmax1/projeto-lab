@@ -20,6 +20,10 @@ select {
 header {
   height: 9rem;
   background-color: #5a58e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 a {
@@ -32,7 +36,7 @@ ul {
   list-style: none;
   justify-content: center;
   height: 100%;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 li a {
@@ -244,4 +248,51 @@ i.ph-fill.ph-star-half {
 
 .rating input[type="radio"]:checked ~ label {
   color: gold;
+}
+
+.login {
+  position: absolute;
+  right: 2rem;
+  border: 0.1rem solid #eaeaea;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login a {
+  font-size: 1.4rem;
+  color: #eaeaea;
+}
+
+.hidden {
+  display: none;
+}
+
+.user {
+  position: absolute;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.user img {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+  border-radius: 100%;
+}
+
+.user p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
 }

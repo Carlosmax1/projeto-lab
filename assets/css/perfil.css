@@ -20,6 +20,10 @@ select {
 header {
   height: 9rem;
   background-color: #5a58e4;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main,
@@ -60,7 +64,57 @@ h1 span {
 }
 
 .history .content {
-  margin-top: 2rem;
+  margin-top: 4rem;
+  display: grid;
+  gap: 3.2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+}
+
+.infos {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.infos > p {
+  color: #121214;
+  font-size: 2rem;
+  line-height: 140%;
+}
+
+.infos span {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1.2rem;
+  opacity: 0.75;
+  color: #111;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.infos span i {
+  color: #5a58e4;
+}
+
+.card {
+  background: #fff;
+  border: 0.1rem solid #eaeaea;
+  border-radius: 1rem;
+  max-width: 38.4rem;
+  overflow: hidden;
+  display: grid;
+  gap: 1.6rem;
+  padding: 1.6rem;
+  cursor: pointer;
 }
 
 .user-mail {
@@ -92,4 +146,22 @@ a {
 
 .hidden {
   display: none;
+}
+
+.exit {
+  position: absolute;
+  right: 2rem;
+  border: 0.1rem solid #eaeaea;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.exit button {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 500;
 }
