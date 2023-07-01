@@ -84,3 +84,26 @@ input:focus {
 .btn-login:hover {
   background-color: #4a48be;
 }
+
+.hidden {
+  display: none;
+}
+
+.toast {
+  position: fixed;
+  width: fit-content;
+  height: fit-content;
+  padding: 1.5rem;
+  background-color: #219221;
+  z-index: 1000;
+  bottom: 2rem;
+  left: 2rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 0.3rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.toast.error {
+  background-color: #a31818;
+}

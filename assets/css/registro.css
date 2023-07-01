@@ -109,3 +109,7 @@ input:focus {
 .btn-registrar:hover {
   background-color: #4a48be;
 }
+
+.hidden {
+  display: none;
+}

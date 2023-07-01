@@ -1,7 +1,8 @@
 <?php
 // crud
 
-class Registration {
+class Registration
+{
   private $user_id;
   private $evento_id;
   private $payment_status;
@@ -9,19 +10,21 @@ class Registration {
   private $conn;
   private $table_name = "registrations";
 
-  public function __construct($db){
+  public function __construct($db)
+  {
     $this->conn = $db;
     if ($this->conn->connect_error) {
       return die("Connection failed: " . $this->conn->connect_error);
     }
   }
-  
 
-  public function create($POST){
+
+  public function create($POST)
+  {
     // Obtenha os dados do formulário POST
-    $this->user_id = $POST['user_id'];
-    $this->evento_id = $POST['evento_id'];
-    $this->payment_status = $POST['payment_status'];
+    $this->user_id = $POST['userID'];
+    $this->evento_id = $POST['eventID'];
+    $this->payment_status = 'completed';
 
     // Preparar a consulta SQL
     $query = "INSERT INTO {$this->table_name} (user_id, evento_id, payment_status) VALUES ({$this->user_id}, {$this->evento_id}, '{$this->payment_status}')";
@@ -33,7 +36,8 @@ class Registration {
     }
   }
 
-  public function read() {
+  public function read()
+  {
     $query = "SELECT * FROM {$this->table_name}";
 
     $result = $this->conn->query($query);
@@ -54,7 +58,8 @@ class Registration {
     }
   }
 
-  public function update($POST){
+  public function update($POST)
+  {
     // Obtenha os dados do formulário POST
     $this->user_id = $POST['user_id'];
     $this->evento_id = $POST['evento_id'];
@@ -70,7 +75,8 @@ class Registration {
     }
   }
 
-  public function delete($POST){
+  public function delete($POST)
+  {
     $this->user_id = $POST['user_id'];
     $this->evento_id = $POST['evento_id'];
 
@@ -82,7 +88,28 @@ class Registration {
     }
   }
 
-  public function __destruct(){
-    $this->conn->close();
+  public function verifyUserSubscribe($evento_id, $user_id)
+  {
+    $this->user_id = $user_id;
+    $this->evento_id = $evento_id;
+
+    $query = "SELECT * FROM {$this->table_name} WHERE user_id = {$this->user_id} AND evento_id = {$this->evento_id}";
+
+    $result = $this->conn->query($query);
+
+    if ($result === false) {
+      echo "Error: " . $query . "<br>" . $this->conn->error;
+      return false;
+    }
+
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      $rows[] = $row;
+    }
+    echo json_encode($rows);
   }
+
+  /*public function __destruct(){
+    $this->conn->close();
+  }*/
 }

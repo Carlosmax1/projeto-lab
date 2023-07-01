@@ -2,6 +2,26 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get("id");
 
+/* Verifica se o usuário está logado */
+
+window.addEventListener("load", () => {
+  const userData = JSON.parse(localStorage.getItem("USER"));
+  if (!userData) {
+    const button = document.querySelector(".btn-insc");
+    button.disabled = true;
+  }
+});
+
+const buttonInsc = document.querySelector(".btn-insc");
+
+buttonInsc.addEventListener("click", async () => {
+  await userSubscribeEvent()
+    .then((data) => {
+      fetch();
+    })
+    .catch((err) => console.log(err));
+});
+
 function getCommentsByEventId() {
   if (id) {
     return new Promise((resolve, reject) => {
@@ -84,7 +104,9 @@ function generateStars(starDiv, number) {
 }
 
 async function fetch() {
-  //const infos = document.querySelector(".infos");
+  if (!id) {
+    return (window.location.href = "../index.html");
+  }
   const texts = document.querySelector(".texts");
   const commentsList = document.querySelector(".comments-list");
   let html;
@@ -127,9 +149,8 @@ async function fetch() {
   await getEventByID()
     .then(async (response) => {
       const data = await JSON.parse(response);
-      console.log(data);
       const event = data.find((item) => item.id === id);
-
+      document.title = `${event.title}`;
       html = `<span><strong>Nome: </strong>${event.title}</span>
       <span><strong>Horário: </strong>${event.time}</span>
       <span><strong>Local: </strong>${event.location}</span>
@@ -141,6 +162,98 @@ async function fetch() {
     })
     .catch((err) => console.log(err));
   texts.innerHTML = html;
+
+  await verifyUserSubscribe().then(async (response) => {
+    const data = await JSON.parse(response);
+    if (data.length) {
+      const button = document.querySelector(".btn-insc");
+      button.disabled = true;
+      button.style.color = "#111";
+      button.innerText = "Você já está inscrito";
+    }
+  });
+}
+
+function userSubscribeEvent() {
+  const { id: userID } = JSON.parse(localStorage.getItem("USER"));
+  if (id) {
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        url: "../OO/process.php",
+        type: "POST",
+        data: {
+          acao: "userSubscribeEvent",
+          userID: userID,
+          eventID: id,
+        },
+        success: (data) => {
+          resolve(data);
+        },
+        error: (err) => {
+          reject(err);
+        },
+      });
+    });
+  }
+}
+
+function verifyUserSubscribe() {
+  const { id: userID } = JSON.parse(localStorage.getItem("USER"));
+
+  if (id && userID) {
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        url: "../OO/process.php",
+        type: "GET",
+        data: {
+          acao: "verifyUserSubscribe",
+          userID: userID,
+          eventID: id,
+        },
+        success: (data) => {
+          resolve(data);
+        },
+        error: (err) => {
+          reject(err);
+        },
+      });
+    });
+  }
+}
+
+const formR = document.querySelector(".form-comment");
+
+formR.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = {};
+
+  for (let i = 0; i < formR.elements.length; i++) {
+    const element = formR.elements[i];
+    if (element.name && element.value) {
+      formData[element.name] = element.value.trim();
+    }
+  }
+  formData["acao"] = "create_review";
+
+  await createReview().then((response) => console.log(response));
+});
+
+function createReview(formData) {
+  if (id) {
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        url: "../OO/process.php",
+        type: "POST",
+        data: formData,
+        success: (data) => {
+          resolve(data);
+        },
+        error: (err) => {
+          reject(err);
+        },
+      });
+    });
+  }
 }
 
 fetch();

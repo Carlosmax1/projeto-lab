@@ -1,3 +1,6 @@
+const form = document.getElementById("createEvent");
+let allCards;
+
 function getAll() {
   return new Promise((resolve, reject) => {
     $.ajax({
@@ -15,8 +18,6 @@ function getAll() {
     });
   });
 }
-
-const form = document.getElementById("createEvent");
 
 function edit(
   id,
@@ -219,4 +220,33 @@ async function fetch() {
   cards.innerHTML = htmlList.join(" ");
 }
 
+// Filtro
+const filter = document.querySelector(".input-container input");
+filter.addEventListener("input", () => {
+  const cards = document.querySelectorAll(".cards .card");
+  if (filter.value !== "") {
+    for (let i = 0; i < cards.length; i++) {
+      let title = cards[i].querySelector(".infos p");
+      title = title.textContent.toLocaleLowerCase();
+      let filterText = filter.value.toLocaleLowerCase();
+      if (!title.includes(filterText)) {
+        cards[i].style.display = "none";
+      } else {
+        cards[i].style.display = "grid";
+      }
+    }
+  } else {
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].style.display = "grid";
+    }
+  }
+});
+
 fetch();
+
+window.addEventListener("load", () => {
+  const isLogin = localStorage.getItem("logado");
+  if (isLogin === "false") {
+    return (window.location.href = "../login/index.html");
+  }
+});

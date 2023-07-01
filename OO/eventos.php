@@ -1,7 +1,8 @@
 <?php
 // crud
 
-class Evento {
+class Evento
+{
   private $id;
   private $title;
   private $description;
@@ -15,14 +16,16 @@ class Evento {
   private $conn;
   private $table_name = "eventos";
 
-  public function __construct($db){
+  public function __construct($db)
+  {
     $this->conn = $db;
     if ($this->conn->connect_error) {
       return die("Connection failed: " . $this->conn->connect_error);
     }
   }
 
-  public function create($POST){
+  public function create($POST)
+  {
     // Obtenha os dados do formulário POST
     $this->title = $POST['title'];
     $this->description = $POST['description'];
@@ -43,7 +46,8 @@ class Evento {
     }
   }
 
-  public function read() {
+  public function read()
+  {
     $query = "SELECT * FROM {$this->table_name}";
 
     $result = $this->conn->query($query);
@@ -61,7 +65,8 @@ class Evento {
     echo json_encode($rows);
   }
 
-  public function update($POST){
+  public function update($POST)
+  {
     // Obtenha os dados do formulário POST
     $this->id = $POST['id'];
     $this->title = $POST['title'];
@@ -83,7 +88,8 @@ class Evento {
     }
   }
 
-  public function delete($POST){
+  public function delete($POST)
+  {
     $this->id = $POST['id'];
 
     $query = "DELETE FROM {$this->table_name} WHERE id = {$this->id}";
@@ -94,7 +100,8 @@ class Evento {
     }
   }
 
-  public function event_recents(){
+  public function event_recents()
+  {
     $query = "SELECT * FROM {$this->table_name}
               ORDER BY ID DESC
               LIMIT 3
@@ -113,10 +120,10 @@ class Evento {
     }
 
     echo json_encode($rows);
-    
   }
 
-  public function getCommentsByEventId($id){
+  public function getCommentsByEventId($id)
+  {
     $query = "SELECT u.name, r.comment, r.score
       FROM reviews r JOIN users u ON r.user_id = u.id
       WHERE evento_id = $id
@@ -137,7 +144,8 @@ class Evento {
     echo json_encode($rows);
   }
 
-  public function getById($id){
+  public function getById($id)
+  {
     $query = "SELECT * FROM eventos
       WHERE ID = $id
     ";
@@ -155,11 +163,15 @@ class Evento {
     }
 
     echo json_encode($rows);
-
-    
   }
 
-  public function __destruct(){
+  public function createReviewEvent($POST)
+  {
+    $user_id = $POST['userID'];
+  }
+
+  public function __destruct()
+  {
     $this->conn->close();
   }
 }

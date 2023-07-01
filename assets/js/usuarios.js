@@ -42,6 +42,7 @@ async function fetch() {
   await getAll()
     .then(async (response) => {
       const data = await JSON.parse(response);
+      console.log(data);
       html = data.map(
         (item) => `
       <tr>

@@ -11,26 +11,17 @@ form.addEventListener("submit", async (e) => {
       formData[element.name] = element.value.trim();
     }
   }
-  formData["acao"] = "user_login";
-  await login(formData)
-    .then(async (response) => {
-      const data = await JSON.parse(response);
-      if (!data.length) {
-        const toast = document.querySelector(".toast");
-        toast.classList.remove("hidden");
-        setInterval(() => {
-          toast.classList.add("hidden");
-        }, 2000);
-        return;
+  formData["acao"] = "user_create";
+  await register(formData)
+    .then((data) => {
+      if (!data) {
+        window.location.href = "../login";
       }
-      const userData = data[0];
-      localStorage.setItem("USER", JSON.stringify(userData));
-      window.location.href = "../perfil";
     })
     .catch((err) => console.log(err));
 });
 
-async function login(formData) {
+async function register(formData) {
   return new Promise((resolve, reject) => {
     $.ajax({
       url: "../OO/process.php",

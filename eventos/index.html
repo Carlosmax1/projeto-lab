@@ -45,10 +45,14 @@
             <i class="ph ph-list"></i>
             <label class="sr-only" for="city">Selecione uma categoria</label>
             <select name="categoria" id="categoria">
-              <option value="0" selected>Selecione uma categoria</option>
-              <option value="">Categoria A</option>
-              <option value="">Categoria B</option>
-              <option value="">Categoria C</option>
+              <option value="0">Selecione uma categoria</option>
+              <option value="1">Festas</option>
+              <option value="2">Bares</option>
+              <option value="3">Shows</option>
+              <option value="4">Música Ao Vivo</option>
+              <option value="5">Teatros</option>
+              <option value="6">Cursos</option>
+              <option value="7">Ferias</option>
             </select>
             <i class="ph ph-caret-down"></i>
           </div>
@@ -56,38 +60,11 @@
         </form>
         <section class="event-list">
           <h2>Lista de eventos</h2>
-          <div class="list">
-            <div class="card">
-              <img src="../assets/images/card.svg" alt="" />
-              <div class="infos">
-                <p>Nome do evento</p>
-                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
-              </div>
-            </div>
-            <div class="card">
-              <img src="../assets/images/card.svg" alt="" />
-              <div class="infos">
-                <p>Nome do evento</p>
-                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
-              </div>
-            </div>
-            <div class="card">
-              <img src="../assets/images/card.svg" alt="" />
-              <div class="infos">
-                <p>Nome do evento</p>
-                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
-              </div>
-            </div>
-            <div class="card">
-              <img src="../assets/images/card.svg" alt="" />
-              <div class="infos">
-                <p>Nome do evento</p>
-                <span> <i class="ph ph-map-pin"></i>Belo Horizonte - MG </span>
-              </div>
-            </div>
-          </div>
+          <div class="list"></div>
         </section>
       </main>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../assets/js/eventos.js"></script>
   </body>
 </html>
